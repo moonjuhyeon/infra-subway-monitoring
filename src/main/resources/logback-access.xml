@@ -37,4 +37,5 @@
     </appender>
 
     <appender-ref ref="STDOUT" />
+    <appender-ref ref="file" />
 </configuration>
