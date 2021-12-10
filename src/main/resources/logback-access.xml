@@ -8,7 +8,7 @@
         <appender-ref ref="file" />
     </logger>
 
-    <property name="home" value="/var/logs/service/" />
+    <property name="home" value="logs/" />
 
     <!--  appender이름이 file인 consoleAppender를 선언  -->
     <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
