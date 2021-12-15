@@ -14,3 +14,15 @@ services:
       - ./db/mysql/data:/var/lib/mysql
       - ./db/mysql/config:/etc/mysql/conf.d
       - ./db/mysql/init:/docker-entrypoint-initdb.d
+      -
+  local-db:
+    image: library/infra-subway-monitoring:lastest
+    container_name: infra-subway-monitoring
+    ports:
+      - 8080:8080
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+    volumes:
+      - ~/monitoring/log:/workspace/log
+    depends_on:
+      - local-db
